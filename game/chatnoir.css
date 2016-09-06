@@ -1,0 +1,34 @@
+  html { background: #888888}
+
+  body {
+        background: #ffffff;
+        margin: 16px auto;
+        width: 7in;
+        padding: 0.45in 0.45in;
+        border: 1px solid #333333;
+        box-shadow: 5px 5px 10px #555555;
+        font-family: "source-sans-pro", sans-serif;
+		text-align:center;
+		height: 7.7in;
+        -webkit-font-smoothing: subpixel-antialiased;
+      }
+
+  h1  {
+		font-size: 24px;
+		font: 'merriweather', sans-serif, Georgia, "Times New Roman", serif;
+		font-weight: normal;
+		margin: auto;
+      }
+  p   {
+		font: "Times New Roman"; font-size: 13pt; 
+	  }
+  h3  { font-size: 13px;
+		margin-bottom: 0;
+		line-height: 3px;
+		font-family: sans-serif, Georgia, "Times New Roman", serif;
+	  }
+	canvas {
+		margin: 1% 11.3%;
+		display: inline;
+		border: 1px solid #ddd;
+	}
