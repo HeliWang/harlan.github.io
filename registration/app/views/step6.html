@@ -1,0 +1,319 @@
+      <div class="row">
+        <div class="hidden-xs col-sm-3" id="sidebar" role="navigation">
+          <div class="list-group">
+            <li ng-click="go('/step1')" class="list-group-item">1. My Information</li>
+            <li ng-click="go('/step2')" class="list-group-item">2. Organization Information</li>
+            <li ng-click="go('/step3')" class="list-group-item">3. Organization Details</li>
+            <li ng-click="go('/step4')" class="list-group-item">4. Attachments</li>
+            <li ng-click="go('/step5')" class="list-group-item">5. Client Groups</li>
+            <li ng-click="go('/step6')" class="list-group-item active">6. Summary</li>
+            <li ng-click="go('/step7')" class="list-group-item">7. Terms and Conditions</li>
+          </div>
+        </div><!--/span-->
+        <div class="col-xs-12 col-sm-9 content">
+            <div><!--class="text-center"-->
+              <div class="panel panel-success">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Step 6 - Summary</h3>
+                </div>
+              </div>
+              
+              <p class="summary-body summary-panel">Below is a summary of the registration information that you’ve entered so far. Please take a moment to review all fields. If you discover an error in your registration information, click the hyperlink at the bottom right of each section to return to the appropriate step to correct. When you’ve made your changes, click the “Next” button repeatedly to return to this summary and continue the process. </p>
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">General Information</h3>
+                </div>
+                <div class="panel-body">
+                  <form class="form-horizontal" role="form">
+  				          <!-- General Information Content -->
+                  </form>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Step 1 - My Information</h3>
+                </div>
+                <div class="panel-body">
+                  <form class="form-horizontal" role="form">
+  				          <!-- Step 1 - My Information Content -->
+  				          <div class="col-sm-6"> 
+                    
+                      <p class="underline">User Information</p>
+                         <div class="form-group">
+                           
+                           <!-- Salutation -->
+                            <label class="col-md-4 control-label"><span style="color:red;">*</span> Salutation:</label>
+                            <div class="col-md-8">
+                              <div class="selectContainer">
+                                <select class="form-control input-sm" ng-model="formdata.salutation" disabled>
+                                  <option>{{formdata.salutation}}</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+		                      <div class="form-group">
+                            <label class="col-md-4 control-label"><span style="color:red;">*</span> First Name:</label>
+                            <div class="col-md-8"><input type="text" class="form-control input-sm" value={{formdata.firstname}} readonly="readonly"></div>
+                          </div>
+		                      <div class="form-group">
+                            <label class="col-md-4 control-label"><span style="color:red;">*</span> Last Name:</label>
+                            <div class="col-md-8"><input type="text" class="form-control input-sm" value={{formdata.lastname}} readonly="readonly"></div>
+                          </div>
+		                      <div class="form-group">
+                            <label class="col-md-4 control-label">Middle Name:</label>
+                            <div class="col-md-8"><input type="text" class="form-control input-sm" value={{formdata.middlename}} readonly="readonly"></div>
+                          </div>
+		                      <div class="form-group">
+                            <label class="col-md-4 control-label"><span style="color:red;">*</span> Job Title:</label>
+                            <div class="col-md-8"><input type="text" class="form-control input-sm" value={{formdata.jobtitle}} readonly="readonly"></div>
+                          </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <p class="underline">Business Contact Information</p>
+                      		<div class="form-group">
+                            <label class="col-md-4 control-label"><span style="color:red;">*</span> Email:</label>
+                            <div class="col-md-8"><input type="email" class="form-control input-sm" value={{formdata.email}} readonly="readonly"></div>
+                          </div>
+		                      <div class="form-group">
+                            <label class="col-md-4 control-label"><span style="color:red;">*</span> Re-type Email:</label>
+                            <div class="col-md-8"><input type="email" class="form-control input-sm" value={{formdata.retypeemail}} readonly="readonly"></div>
+                          </div>
+		                      <div class="form-group">
+                            <label class="col-md-4 control-label"><span style="color:red;">*</span> Work Phone #:</label>
+                            <div class="col-md-8"><input type="text" class="form-control input-sm" value={{formdata.workphone}} readonly="readonly"></div>
+                          </div>
+		                      <div class="form-group">
+                            <label class="col-md-4 control-label">Work Phone Extension:</label>
+                            <div class="col-md-8"><input type="text" class="form-control input-sm" value={{formdata.workphoneex}} readonly="readonly"></div>
+                          </div>
+		                      <div class="form-group">
+                            <label class="col-md-4 control-label">Mobile Phone #:</label>
+                            <div class="col-md-8"><input type="text" class="form-control input-sm" value={{formdata.mobile}} readonly="readonly"></div>
+                          </div>
+                    </div>
+  				          
+  				          
+  				          
+  				          
+  				          
+  				          
+  				          
+  				          
+  				          
+                  </form>
+                </div>
+              </div>
+
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Step 2 - Organization Information</h3>
+                </div>
+                <div class="panel-body">
+                  <form class="form-horizontal" role="form">
+  				          <!-- Step 2 - Organization Information Content -->
+  				          
+                      <div class="col-sm-6"> 
+                        <p class="underline">Organization Information</p>
+                        
+	                      <div class="form-group">
+                          <label class="col-md-4 control-label"><span style="color:red;">*</span> Name:</label>
+                          <div class="col-md-8"><input type="text" class="form-control input-sm" value={{formdata.orgname}} placeholder="" readonly></div>
+                        </div>
+                        
+                        <div class="form-group">
+                          <label class="col-md-4 control-label"><span style="color:red;">*</span> Country:</label>
+                          <div class="col-md-8">
+                            <div class="selectContainer radioLeft">
+                              <select class="form-control input-sm select" readonly>
+                                <option>{{formdata.orgcountry}}</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        
+	                      <div class="form-group">
+                          <label class="col-md-4 control-label"><span style="color:red;">*</span> Address Line 1:</label>
+                          <div class="col-md-8"><input type="text" class="form-control input-sm" value={{formdata.orgaddress1}} placeholder="" readonly></div>
+                        </div>
+                        
+	                      <div class="form-group">
+                          <label class="col-md-4 control-label">  Address Line 2:</label>
+                          <div class="col-md-8"><input type="text" class="form-control input-sm" value={{formdata.orgaddress2}} placeholder="" readonly></div>
+                        </div>
+                        
+	                      <div class="form-group">
+                          <label class="col-md-4 control-label"><span style="color:red;">*</span> City/Town:</label>
+                          <div class="col-md-8"><input type="text" class="form-control input-sm" value={{formdata.orgtown}} placeholder="" readonly></div>
+                        </div>
+                        
+                        <div class="form-group">
+                          <label class="col-md-4 control-label"><span style="color:red;" ng-show="data.isNA(formdata.orgcountry)">*</span> Province/State:</label>
+                          <div class="col-md-8">
+                            <div class="selectContainer radioLeft">
+                              <select class="form-control input-sm select" readonly>
+                                <option>{{formdata.orgprovince}}</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        
+	                      <div class="form-group">
+                          <label class="col-md-4 control-label"> 
+                             Foreign Province/State:
+                          </label>
+                          <div class="col-md-8"><input type="text" class="form-control input-sm" value={{formdata.orgforeign}} 
+                               placeholder="" readonly></div>
+                        </div>
+                        
+                        <!--Need Validation-->
+	                      <div class="form-group">
+                          <label class="col-md-4 control-label"><span style="color:red;">*</span> Postal Code (if Canada: M9M9M9):</label>
+                          <div class="col-md-8"><input type="text" class="form-control input-sm" 
+                               value={{formdata.orgpostal}} placeholder="" readonly></div>
+                        </div>
+                        
+                      </div>
+                      
+                      
+                      <!--Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello-->
+                      
+                      
+                      <div class="col-sm-6">
+                        <p class="underline">Mailing Address</p>
+
+                        <div class="form-group">
+                          <label class="hidden-xs col-sm-4 control-label"> Same as Organization:</label>
+                          <span class="col-sm-8 checkbox">
+                          <label><input type="checkbox" ng-checked="formdata.sameAsOrg" readonly> <span class="visible-xs">Same as Organization</span></label>
+                           </span>
+                        </div>
+                        
+                        <div class="form-group">
+                          <label class="col-md-4 control-label"><span style="color:red;">*</span> Country:</label>
+                          <div class="col-md-8">
+                            <div class="selectContainer radioLeft">
+                              <select class="form-control input-sm select" readonly>
+                                <option>{{formdata.mailcountry}}</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        
+	                      <div class="form-group">
+                          <label class="col-md-4 control-label"><span style="color:red;">*</span> Address Line 1:</label>
+                          <div class="col-md-8"><input type="text" class="form-control input-sm" value={{formdata.mailaddress1}} placeholder="" readonly></div>
+                        </div>
+                        
+	                      <div class="form-group">
+                          <label class="col-md-4 control-label">  Address Line 2:</label>
+                          <div class="col-md-8"><input type="text" class="form-control input-sm" value={{formdata.mailaddress2}} placeholder="" readonly></div>
+                        </div>
+                        
+	                      <div class="form-group">
+                          <label class="col-md-4 control-label"><span style="color:red;">*</span> City/Town:</label>
+                          <div class="col-md-8"><input type="text" class="form-control input-sm" value={{formdata.mailtown}} placeholder="" readonly></div>
+                        </div>
+                        
+                        <div class="form-group">
+                          <label class="col-md-4 control-label"><span style="color:red;" ng-show="data.isNA(formdata.mailcountry)">*</span> Province/State:</label>
+                          <div class="col-md-8">
+                            <div class="selectContainer radioLeft">
+                              <select class="form-control input-sm select" readonly>
+                                <option>{{formdata.mailprovince}}</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        
+	                      <div class="form-group">
+                          <label class="col-md-4 control-label"> 
+                             Foreign Province/State:
+                          </label>
+                          <div class="col-md-8"><input type="text" class="form-control input-sm" value={{formdata.mailforeign}} 
+                               placeholder="" readonly></div>
+                        </div>
+                        
+                        <!--Need Validation-->
+	                      <div class="form-group">
+                          <label class="col-md-4 control-label"><span style="color:red;">*</span> Postal Code (if Canada: M9M9M9):</label>
+                          <div class="col-md-8"><input type="text" class="form-control input-sm" 
+                               value={{formdata.mailpostal}} placeholder="" readonly></div>
+                        </div>
+                        
+                      </div>
+  				          
+  				          
+  				          
+  				          
+  				          
+  				          
+  				          
+  				          
+  				          
+  				          
+  				          
+  				          
+                  </form>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Step 3 - Organization Details</h3>
+                </div>
+                <div class="panel-body">
+                  <form class="form-horizontal" role="form">
+  				          <!-- Step 3 - Organization Details -->
+                  </form>
+                </div>
+              </div>
+
+
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Step 4 - Attachments</h3>
+                </div>
+                <div class="panel-body">
+                  <form class="form-horizontal" role="form">
+  				          <!-- Step 4 - Attachments -->
+                    <div>
+                      <span ng-repeat="file in $flow.files" class="transfer-box">
+                        {{file.relativePath}}    ({{file.size}}bytes)
+                        <div class="btn-group">
+                          <a class="btn btn-xs btn-default" ng-click="file.cancel()">
+                            Delete
+                          </a>
+                        </div>
+                         &nbsp; &nbsp;
+                      </span>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Step 5 - Client Groups</h3>
+                </div>
+                <div class="panel-body">
+                  <form class="form-horizontal" role="form">
+  				          <!-- Step 5 - Client Groups -->
+                  </form>
+                </div>
+              </div>
+              
+              <div>
+    				    <button type="submit" ng-click="go('/step7')" class="navbutton btn btn-success pull-right" id="next"> Next </button>
+  				      <button type="submit" ng-click="go('/step5')" class="navbutton btn btn-success pull-right" id="back"> Back </button>  
+              </div>
+            </div>
+            
+          </div><!--/span-->
+          
+      </div><!--/row-->

@@ -1,0 +1,93 @@
+      <div class="row">
+        <div class="hidden-xs col-sm-3" id="sidebar" role="navigation">
+          <div class="list-group">
+            <li ng-click="go('/step1')" class="list-group-item">1. My Information</li>
+            <li ng-click="go('/step2')" class="list-group-item">2. Organization Information</li>
+            <li ng-click="go('/step3')" class="list-group-item">3. Organization Details</li>
+            <li ng-click="go('/step4')" class="list-group-item active">4. Attachments</li>
+            <li ng-click="go('/step5')" class="list-group-item">5. Client Groups</li>
+            <li ng-click="go('/step6')" class="list-group-item">6. Summary</li>
+            <li ng-click="go('/step7')" class="list-group-item">7. Terms and Conditions</li>
+          </div>
+        </div><!--/span-->
+        <div class="col-xs-12 col-sm-9 content">
+          
+          <small>In this step you may be required to attach some proof of your organization’s status (such as Letters Patent, Articles of Incorporation, By-Laws, a Band Council Resolution or some other type of proof validating the existence of your organization).</small>
+          <p> </p>
+          
+            <div><!--class="text-center"-->
+              <div class="panel panel-success">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Step 4 - Attachments</h3>
+                </div>
+              <div class="panel-body">
+                <form class="form-horizontal" role="form">
+                  
+        				  <!-- Content -->
+				  
+				 
+                  <div 
+                       flow-files-submitted="$flow.upload()">
+                    <div class="drop" flow-drop ng-class="dropClass">
+                      <span class="hidden-xs"> 
+                        <button class="btn btn-small btn-default" flow-btn>Upload File</button>
+                        <button class="btn btn-small btn-default" flow-btn flow-directory ng-show="$flow.supportDirectory">Upload Folder</button>
+                        <b>OR</b>
+                        Drag And Drop your file here
+                      </span>
+                      
+                   
+                        <h6 class="button well visible-xs text-center" flow-btn>Upload File Here</h6>
+                    
+                      
+                    </div>
+                  
+                    <br/>
+                  
+                    <div class="well hidden-xs">
+                      <button class="btn btn-small btn-success" ng-click="$flow.resume()">Resume all</button>
+                      <button class="btn btn-small btn-danger" ng-click="$flow.pause()">Pause all</button>
+                      <button class="btn btn-small btn-info" ng-click="$flow.cancel()">Delete all</button>
+                      <span class="label label-info">Total Size: {{$flow.getSize()}}bytes</span>
+                    </div>
+                  
+                    <div>
+                  
+                      <div ng-repeat="file in $flow.files" class="transfer-box">
+                        {{file.relativePath}} ({{file.size}}bytes)
+                        <div class="progress progress-striped" ng-class="{active: file.isUploading()}">
+                          <div class="progress-bar" role="progressbar"
+                               aria-valuenow="{{file.progress() * 100}}"
+                               aria-valuemin="0"
+                               aria-valuemax="100"
+                               ng-style="{width: (file.progress() * 100) + '%'}">
+                            <span class="sr-only">{{file.progress()}}% Complete</span>
+                          </div>
+                        </div>
+                        <div class="btn-group">
+                          <a class="btn btn-xs btn-warning" ng-click="file.pause()" ng-show="!file.paused && file.isUploading()">
+                            Pause
+                          </a>
+                          <a class="btn btn-xs btn-warning" ng-click="file.resume()" ng-show="file.paused">
+                            Resume
+                          </a>
+                          <a class="btn btn-xs btn-danger" ng-click="file.cancel()">
+                            Delete
+                          </a>
+                          <a class="btn btn-xs btn-info" ng-click="file.retry()" ng-show="file.error">
+                            Retry
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button type="submit" ng-click="go('/step5')" class="navbutton btn btn-success pull-right" id="next"> Next </button>
+				          <button type="submit" ng-click="go('/step3')" class="navbutton btn btn-success pull-right" id="back"> Back </button> 
+                </form>
+              </div>
+              </div>
+            </div>
+          </div><!--/span-->
+          
+      </div><!--/row-->

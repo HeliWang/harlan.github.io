@@ -1,0 +1,93 @@
+<!-- http://plnkr.co/edit/W1NFc8tRueMEzJrpOUeZ?p=preview -->
+      <div class="row">
+        <div class="hidden-xs col-sm-3" id="sidebar" role="navigation">
+          <div class="list-group">
+              <li ng-click="go('/step1')" class="list-group-item active">1. My Information</li>
+            <li ng-click="go('/step2')" class="list-group-item">2. Organization Information</li>
+            <li ng-click="go('/step3')" class="list-group-item">3. Organization Details</li>
+            <li ng-click="go('/step4')" class="list-group-item">4. Attachments</li>
+            <li ng-click="go('/step5')" class="list-group-item">5. Client Groups</li>
+            <li ng-click="go('/step6')" class="list-group-item">6. Summary</li>
+            <li ng-click="go('/step7')" class="list-group-item">7. Terms and Conditions</li>
+          </div>
+        </div><!--/span-->
+        <div class="col-xs-12 col-sm-9 content">
+
+          <p>You must complete all fields marked with an <span style="color:red;">*</span> before proceeding to the next page. </p>
+            <div><!--class="text-center"-->
+              <div class="panel panel-success">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Step 1 - My Information</h3>
+                </div>
+              <div class="panel-body" style="cursor:pointer">
+                <form name="step1Form" ng-submit="go('/step2')" class="form-horizontal" role="form" novalidate>
+                  <div class="row">
+                    <div class="col-sm-6"> 
+                    
+                      <p class="underline">User Information</p>
+                         <div class="form-group">
+                           
+                           <!-- Salutation -->
+                            <label class="col-md-4 control-label"><span style="color:red;">*</span> Salutation:</label>
+                            <div class="col-md-8">
+                              <div class="selectContainer radioLeft">
+                                <select class="form-control input-sm select" ng-model="formdata.salutation" required-err-type="Salutationisrequired" required>
+                                  <option value=""></option>
+                                  <option value="Chief">Chief</option>
+                                  <option value="Dr.">Dr.</option>
+                                  <option value="Miss">Miss</option>
+                                  <option value="Mr.">Mr.</option>
+                                  <option value="Ms.">Ms.</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+		                      <div class="form-group">
+                            <label class="col-md-4 control-label"><span style="color:red;">*</span> First Name:</label>
+                            <div class="col-md-8"><input type="text" class="form-control input-sm" ng-model="formdata.firstname" required-err-type="Firstnameisrequired" placeholder="" required></div>
+                          </div>
+		                      <div class="form-group">
+                            <label class="col-md-4 control-label"><span style="color:red;">*</span> Last Name:</label>
+                            <div class="col-md-8"><input type="text" class="form-control input-sm" ng-model="formdata.lastname" required-err-type="LastNameisrequired"  placeholder="" required></div>
+                          </div>
+		                      <div class="form-group">
+                            <label class="col-md-4 control-label">Middle Name:</label>
+                            <div class="col-md-8"><input type="text" class="form-control input-sm" ng-model="formdata.middlename" placeholder=""></div>
+                          </div>
+		                      <div class="form-group">
+                            <label class="col-md-4 control-label"><span style="color:red;">*</span> Job Title:</label>
+                            <div class="col-md-8"><input type="text" class="form-control input-sm" ng-model="formdata.jobtitle" required-err-type="JobTitleisrequired" placeholder="" required></div>
+                          </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <p class="underline">Business Contact Information</p> <!-- for every input, id must be unique (just for error message)-->
+                      		<div class="form-group">
+                            <label class="col-md-4 control-label"><span style="color:red;">*</span> Email:</label>
+                            <div class="col-md-8"><input type="email" id="email" class="form-control input-sm" ng-model="formdata.email" placeholder="" required-err-type="Emailisrequired" ng-model-options="{updateOn: 'blur'}" required></div>
+                          </div>
+		                      <div class="form-group">
+                            <label class="col-md-4 control-label"><span style="color:red;">*</span> Re-type Email:</label>
+                            <div class="col-md-8"><input type="email" class="form-control input-sm" ng-model="formdata.retypeemail" confirm-email="formdata.email" placeholder="" required-err-type="Re-typeemailisrequired" ng-model-options="{updateOn: 'blur'}" required></div>
+                          </div>
+		                      <div class="form-group">
+                            <label class="col-md-4 control-label"><span style="color:red;">*</span> Work Phone #:</label>
+                            <div class="col-md-8"><input type="text" class="form-control input-sm" ng-model="formdata.workphone" validate-phone="formdata.workphone" placeholder="" required-err-type="WorkPhoneisrequired" required></div>
+                          </div>
+		                      <div class="form-group">
+                            <label class="col-md-4 control-label">Work Phone Extension:</label>
+                            <div class="col-md-8"><input type="text" class="form-control input-sm" ng-model="formdata.workphoneex" validate-phone="formdata.workphoneex" placeholder=""></div>
+                          </div>
+		                      <div class="form-group">
+                            <label class="col-md-4 control-label">Mobile Phone #:</label>
+                            <div class="col-md-8"><input type="text" class="form-control input-sm" ng-model="formdata.mobile" validate-phone="formdata.mobile" placeholder=""></div>
+                          </div>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-success pull-right" id="next"> Next </button>
+                </form>
+              </div>
+              </div>
+            </div>
+          </div><!--/span-->
+          
+      </div><!--/row-->

@@ -1,0 +1,183 @@
+<div class="row">
+  <div class="hidden-xs col-sm-3" id="sidebar" role="navigation">
+    <div class="list-group">
+        <li ng-click="go('/step1')" class="list-group-item">1. My Information</li>
+        <li ng-click="go('/step2')" class="list-group-item active">2. Organization Information</li>
+        <li ng-click="go('/step3')" class="list-group-item">3. Organization Details</li>
+        <li ng-click="go('/step4')" class="list-group-item">4. Attachments</li>
+        <li ng-click="go('/step5')" class="list-group-item">5. Client Groups</li>
+        <li ng-click="go('/step6')" class="list-group-item">6. Summary</li>
+        <li ng-click="go('/step7')" class="list-group-item">7. Terms and Conditions</li>
+    </div>
+  </div><!--/span-->
+  <div class="col-xs-12 col-sm-9 content">
+      <p>You must complete all fields marked with an <span style="color:red;">*</span> before proceeding to the next page. </p>
+      <div><!--class="text-center"-->
+        <div class="panel panel-success">
+          <div class="panel-heading">
+            <h3 class="panel-title">Step 2 - Organization Information</h3>
+          </div>
+          <div class="panel-body">
+  	          <!-- Content -->
+
+                <div class="panel-body" style="cursor:pointer">
+                  <form name="step2Form" ng-submit="go('/step3')" class="form-horizontal" role="form" novalidate>
+                    <div class="row">
+                      
+                      
+                      <div class="col-sm-6"> 
+                        <p class="underline">Organization Information</p>
+                        
+	                      <div class="form-group">
+                          <label class="col-md-4 control-label"><span style="color:red;">*</span> Name:</label>
+                          <div class="col-md-8"><input type="text" class="form-control input-sm" ng-model="formdata.orgname" required-err-type="OrgNameisrequired" placeholder="" required></div>
+                        </div>
+                        
+                        <div class="form-group">
+                          <label class="col-md-4 control-label"><span style="color:red;">*</span> Country:</label>
+                          <div class="col-md-8">
+                            <div class="selectContainer radioLeft">
+                              <select class="form-control input-sm select" ng-model="formdata.orgcountry" 
+                                      ng-options="place as place for place in data.getCountry()" 
+                                      ng-change="data.clearorgf()" required-err-type="OrgCountryisrequired" required>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        
+	                      <div class="form-group">
+                          <label class="col-md-4 control-label"><span style="color:red;">*</span> Address Line 1:</label>
+                          <div class="col-md-8"><input type="text" class="form-control input-sm" ng-model="formdata.orgaddress1" required-err-type="OrgAddress1isrequired" placeholder="" required></div>
+                        </div>
+                        
+	                      <div class="form-group">
+                          <label class="col-md-4 control-label">  Address Line 2:</label>
+                          <div class="col-md-8"><input type="text" class="form-control input-sm" ng-model="formdata.orgaddress2" placeholder=""></div>
+                        </div>
+                        
+	                      <div class="form-group">
+                          <label class="col-md-4 control-label"><span style="color:red;">*</span> City/Town:</label>
+                          <div class="col-md-8"><input type="text" class="form-control input-sm" ng-model="formdata.orgtown" placeholder="" required-err-type="OrgCityisrequired" required></div>
+                        </div>
+                        
+                        <div class="form-group">
+                          <label class="col-md-4 control-label"><span style="color:red;" ng-show="data.isNA(formdata.orgcountry)">*</span> Province/State:</label>
+                          <div class="col-md-8">
+                            <div class="selectContainer radioLeft">
+                              <select class="form-control input-sm select" ng-model="formdata.orgprovince" 
+                                      ng-disabled="!data.isNA(formdata.orgcountry)" ng-required="data.isNA(formdata.orgcountry)"
+                                      ng-options="place as place for place in data.getProvince(formdata.orgcountry)" required-err-type="OrgProvicneisrequired">
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        
+	                      <div class="form-group">
+                          <label class="col-md-4 control-label"> 
+                             Foreign Province/State:
+                          </label>
+                          <div class="col-md-8"><input type="text" class="form-control input-sm" ng-model="formdata.orgforeign" 
+                               placeholder="" ng-disabled="data.isNA(formdata.orgcountry)"></div>
+                        </div>
+                        
+	                      <div class="form-group">
+                          <label class="col-md-4 control-label"><span style="color:red;">*</span> Postal Code (if Canada: M9M9M9):</label>
+                          <div class="col-md-8"><input type="text" class="form-control input-sm" 
+                               ng-model="formdata.orgpostal" placeholder="" validate-postal="formdata.orgcountry" 
+                               ng-change="data.upperOrgPostal()" required-err-type="OrgPostalisrequired" required></div>
+                        </div>
+                        
+                      </div>
+                      
+                      
+                      <!--Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello-->
+                      
+                      
+                      <div class="col-sm-6">
+                        <p class="underline">Mailing Address</p>
+
+                        <div class="form-group">
+                          <label class="hidden-xs col-sm-4 control-label"> Same as Organization:</label>
+                          <span class="col-sm-8 checkbox">
+                          <label><input type="checkbox"   ng-model="formdata.sameAsOrg" 
+                                     placeholder="" ng-change="data.clearMail()" disable-validation-message="" disable-invalid-styling="true" disable-valid-styling="true" value=""> <span class="visible-xs">Same as Organization</span></label>
+                           </span>
+                        </div>
+                        
+                        <div class="form-group">
+                          <label class="col-md-4 control-label"><span style="color:red;">*</span> Country:</label>
+                          <div class="col-md-8">
+                            <div class="selectContainer radioLeft">
+                              <select class="form-control input-sm select" ng-model="formdata.mailcountry" 
+                                      ng-options="place as place for place in data.getCountry()" ng-required="!formdata.sameAsOrg" 
+                                      ng-disabled="formdata.sameAsOrg" ng-change="data.clearmailf()" required-err-type="MailCountryisrequired">
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        
+	                      <div class="form-group">
+                          <label class="col-md-4 control-label"><span style="color:red;">*</span> Address Line 1:</label>
+                          <div class="col-md-8"><input type="text" class="form-control input-sm" 
+                               ng-model="formdata.mailaddress1" placeholder="" ng-required="!formdata.sameAsOrg" 
+                               ng-disabled="formdata.sameAsOrg" required-err-type="MailAddress1isrequired"></div>
+                        </div>
+                        
+	                      <div class="form-group">
+                          <label class="col-md-4 control-label">  Address Line 2:</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control input-sm" ng-model="formdata.mailaddress2" 
+                                   placeholder="" ng-disabled="formdata.sameAsOrg"></input>
+                          </div>
+                        </div>
+                        
+	                      <div class="form-group">
+                          <label class="col-md-4 control-label"><span style="color:red;">*</span> City/Town:</label>
+                          <div class="col-md-8"><input type="text" class="form-control input-sm" ng-model="formdata.mailtown" 
+                               placeholder="" ng-required="!formdata.sameAsOrg" ng-disabled="formdata.sameAsOrg" required-err-type="MailCityisrequired"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                          <label class="col-md-4 control-label"><span style="color:red;" ng-show="data.isNA(formdata.mailcountry)">*</span> Province/State:</label>
+                          <div class="col-md-8">
+                            <div class="selectContainer radioLeft">
+                              <select class="form-control input-sm select" ng-model="formdata.mailprovince" 
+                                      ng-disabled="!data.isNA(formdata.mailcountry) || formdata.sameAsOrg" 
+                                      ng-required="data.isNA(formdata.mailcountry) && !formdata.sameAsOrg"
+                                      ng-options="place as place for place in data.getProvince(formdata.mailcountry)" required-err-type="MailProvicneisrequired">
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        
+	                      <div class="form-group">
+                          <label class="col-md-4 control-label"> 
+                             Foreign Province/State:
+                          </label>
+                          <div class="col-md-8"><input type="text" class="form-control input-sm" ng-model="formdata.mailforeign" 
+                               placeholder="" ng-disabled="data.isNA(formdata.mailcountry) || formdata.sameAsOrg"></div>
+                        </div>
+                         
+	                      <div class="form-group">
+                          <label class="col-md-4 control-label"><span style="color:red;">*</span> Postal Code (if Canada: M9M9M9):</label>
+                          <div class="col-md-8"><input type="text" class="form-control input-sm" ng-model="formdata.mailpostal" 
+                               placeholder="" ng-disabled="formdata.sameAsOrg" ng-required="!formdata.sameAsOrg" 
+                               ng-change="data.upperMailPostal()" validate-postal="formdata.mailcountry" required-err-type="MailPostalisrequired"></div>
+                        </div> 
+                      </div>
+                    </div>
+                    
+                    
+                    <button type="submit" class="navbutton btn btn-success pull-right" id="next"> Next </button>
+				            <button type="back" ng-click="go('/step1')" class="navbutton btn btn-success pull-right" id="back"> Back </button> 
+				            
+				            
+                  </form>
+                </div>
+        </div>
+      </div>
+    </div><!--/span-->
+    
+</div><!--/row-->

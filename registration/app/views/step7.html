@@ -1,0 +1,31 @@
+      <div class="row">
+        <div class="hidden-xs col-sm-3" id="sidebar" role="navigation">
+          <div class="list-group">
+            <li ng-click="go('/step1')" class="list-group-item">1. My Information</li>
+            <li ng-click="go('/step2')" class="list-group-item">2. Organization Information</li>
+            <li ng-click="go('/step3')" class="list-group-item">3. Organization Details</li>
+            <li ng-click="go('/step4')" class="list-group-item">4. Attachments</li>
+            <li ng-click="go('/step5')" class="list-group-item">5. Client Groups</li>
+            <li ng-click="go('/step6')" class="list-group-item">6. Summary</li>
+            <li ng-click="go('/step7')" class="list-group-item active">7. Terms and Conditions</li>
+          </div>
+        </div><!--/span-->
+        <div class="col-xs-12 col-sm-9 content">
+            <div><!--class="text-center"-->
+              <div class="panel panel-success">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Step 7 - Terms and Conditions</h3>
+                </div>
+              <div class="panel-body">
+                <form class="form-horizontal" role="form">
+				  <!-- Content -->
+				  <br><br><br><br><br><br><br><br><br><br><br><br><br>
+				          <button type="submit" class="navbutton btn btn-success pull-right" id="next"> I Agree </button>
+				          <button type="submit" ng-click="go('/step6')" class="navbutton btn btn-success pull-right" id="back"> Back </button>  
+                </form>
+              </div>
+              </div>
+            </div>
+          </div><!--/span-->
+          
+      </div><!--/row-->

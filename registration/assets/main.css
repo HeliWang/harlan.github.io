@@ -1,0 +1,67 @@
+html, body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+  height: 100%;
+}
+body {
+  padding-top: 70px;
+}
+footer {
+  padding: 30px 0;
+}
+
+.navbar-inner{
+  background-image: url('top_banner_bk.png');
+  background-repeat: repeat-x;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.underline{
+  border-bottom: 1px solid #ccc;
+  font-weight: bold;
+}
+
+.control-label{
+  font-weight: 400;
+}
+
+.navbutton{
+    margin-right: 10px;
+}
+
+.summary-body{
+    margin-left: 15px;
+}
+
+input[readonly] {
+  pointer-events: none;
+}
+
+.radioLeft {
+  display: block;
+  text-align: left;
+}
+
+
+select.select  {
+    padding: 0px 6px;
+    width: 100%;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;    // removes borders and downarrow button of the select box from webkit browsers.
+    -moz-appearance: none;  // cannot remove the downarrow button of the mozilla browsers.
+    appearance: none;
+    text-indent: 3px;
+    text-overflow: '';  // with text-indent this overflow empty string removes the down arrow of the mozilla browsers.
+}
+ 
+select.select:focus  {
+    outline: none;
+}
+
+select.select:-ms-expand {
+    width:16px;
+    border:none;
+    background:#fff;
+}

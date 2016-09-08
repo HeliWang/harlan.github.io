@@ -1,0 +1,108 @@
+      <div class="row">
+        <div class="hidden-xs col-sm-3" id="sidebar" role="navigation">
+          <div class="list-group">
+            <li ng-click="go('/step1')" class="list-group-item">1. My Information</li>
+            <li ng-click="go('/step2')" class="list-group-item">2. Organization Information</li>
+            <li ng-click="go('/step3')" class="list-group-item active">3. Organization Details</li>
+            <li ng-click="go('/step4')" class="list-group-item">4. Attachments</li>
+            <li ng-click="go('/step5')" class="list-group-item">5. Client Groups</li>
+            <li ng-click="go('/step6')" class="list-group-item">6. Summary</li>
+            <li ng-click="go('/step7')" class="list-group-item">7. Terms and Conditions</li>
+          </div>
+        </div><!--/span-->
+        <div class="col-xs-12 col-sm-9 content">
+          <p>You must complete all fields marked with an <span style="color:red;">*</span> before proceeding to the next page. </p>
+            <div><!--class="text-center"-->
+              <div class="panel panel-success">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Step 3 - Organization Details</h3>
+                </div>
+              <div class="panel-body">
+                <form class="form-horizontal" ng-submit="go('/step4')" role="form" novalidate >
+				  <!-- Content -->
+                  <div class="row">
+                    <div class="col-sm-6"> 
+                    
+                      <p class="underline">Legal Information</p>
+                           
+		                   <div class="form-group">
+                            <label class="col-md-4 control-label"><span style="color:red;">*</span> Organization Legal Name:</label>
+                            <div class="col-md-8"><input type="text" class="form-control input-sm" ng-model="formdata.legalName" placeholder="" required></div>
+                          </div>
+                           
+                         <div class="form-group">
+
+                            <label class="col-md-4 control-label"><span style="color:red;">*</span> Type of Legal Entry:</label>
+                            <div class="col-md-8">
+                              <div class="selectContainer">
+                                <select class="form-control input-sm" ng-model="formdata.typeOfLegalEntry" required>
+                                  <option value=""></option>
+                                  <option value="1">Not for Profit Incorporated</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+		                   <div class="form-group">
+                            <label class="col-md-4 control-label"><span style="color:red;">*</span> Year Established:</label>
+                            <div class="col-md-8"><input type="text" class="form-control input-sm" ng-model="formdata.yearEstablished" placeholder="" required></div>
+                          </div>
+		                      <div class="form-group">
+                            <label class="col-md-4 control-label"><span style="color:red;">*</span> Date Incorporated(e.g. MM/DD/YYYY):</label>
+                            <div class="col-md-4">
+                               <div class="input-group date">
+                                   <input type="text" class="form-control input-sm datepicker" ng-model="formdata.dateIncorporated" placeholder="">
+                                   <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                               </div>
+                            </div>
+                          </div>
+		                      <div class="form-group">
+                            <label class="col-md-4 control-label">Single Business Number:</label>
+                            <div class="col-md-8"><input type="text" class="form-control input-sm" ng-model="formdata.singleBusinessNum" placeholder=""></div>
+                          </div>
+		                      <div class="form-group">
+                            <label class="col-md-4 control-label"><span style="color:red;">*</span> Corporation Registration #:</label>
+                            <div class="col-md-8"><input type="text" class="form-control input-sm" ng-model="formdata.corpRegNum" placeholder="" required></div>
+                          </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <p class="underline">More Information</p>
+                      		<div class="form-group">
+                            <label class="col-md-4 control-label"><span style="color:red;">*</span> Organization Mandate (What is the purpose of your organization?) (maximum 2000 characters):</label>
+                            <div class="col-md-8"><textarea type="text" class="form-control input-sm" ng-model="formdata.orgMandate" placeholder="" required></textarea></div>
+                          </div>
+		                      <div class="form-group">
+                            <label class="col-md-4 control-label"><span style="color:red;">*</span> Date of Last AGM (e.g. MM/DD/YYYY)</label>
+                            <div class="col-md-4">
+                               <div class="input-group date"><input type="text" class="form-control input-sm datepicker" ng-model="formdata.dateOfLastAGM" placeholder="" required>
+                               <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                </div>
+                               </div>
+                          </div>
+		                      <div class="form-group">
+                            <label class="col-md-4 control-label"><span style="color:red;">*</span>Date of Next AGM (e.g. MM/DD/YYYY):</label>
+                            <div class="col-md-4">
+                                <div class="input-group date">
+                                   <input type="text" class="form-control input-sm datepicker" ng-model="formdata.dateOfNextAGM" placeholder="" required>
+                                   <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                               </div>                            
+                            </div>
+                          </div>
+		                      <div class="form-group">
+                            <label class="col-md-4 control-label">Website Address(e.g. http://test.ca):</label>
+                            <div class="col-md-8"><input type="text" class="form-control input-sm" ng-model="formdata.website" placeholder=""></div>
+                          </div>
+		                      
+                    </div>
+                  </div>
+
+				  
+                  <button type="submit"  class="navbutton btn btn-success pull-right" id="next"> Next </button>
+				          <button type="submit" ng-click="go('/step2')" class="navbutton btn btn-success pull-right" id="back"> Back </button> 
+
+                </form>
+              </div>
+              </div>
+            </div>
+          </div><!--/span-->
+          
+      </div><!--/row-->

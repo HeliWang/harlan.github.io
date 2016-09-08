@@ -1,0 +1,49 @@
+<html data-ng-app="gos">
+  <head>
+    <title>TP Common Registration POC</title>
+    <!-- Banner CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/main.css">
+    <!-- Latest compiled and minified CSS -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type='text/javascript' src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-route.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-aria.js"></script>
+    <script src="bower_components/angular-auto-validate/dist/jcs-auto-validate.js"></script>
+    <script src="assets/bootstrap-datepicker.js"></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Load app main script (main conttroller) -->
+    <script src="app/app.js"></script>
+    <!-- Load validation setup script -->
+    <script src="app/validation.js"></script>
+    <!-- flow.js + ng-flow libraries -->
+    <script src="bower_components/flow.js/dist/flow.js"></script>
+    <script src="bower_components/ng-flow/dist/ng-flow.js"></script>
+    <!-- Load controllers -->
+    <script src="app/controllers/step1Controller.js"></script>
+    <script src="app/controllers/step2Controller.js"></script>
+    <script src="app/controllers/step3Controller.js"></script>
+    <script src="app/controllers/step4Controller.js"></script>
+    <script src="app/controllers/step5Controller.js"></script>
+    <script src="app/controllers/step6Controller.js"></script>
+    <script src="app/controllers/step7Controller.js"></script>
+  </head>
+  
+  <body>
+    <div ng-controller="mainController">
+      <div class="navbar navbar-fixed-top navbar-inverse">
+        <div class="navbar-inner">
+          <img src="assets/banner_globe_logo.gif" alt="TP Common Registration" width="320" height="47">
+        </div>
+      </div>
+    
+      <div class="container-fluid" flow-init> <!-- flow-init creates a new scope for file upload flow in step4-->
+        <div data-ng-view="">  </div>
+      </div><!-- /.container -->
+    </div><!-- /.mainController -->
+  </body>
+</html>
