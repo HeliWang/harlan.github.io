@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="uwbook_webapiContext-Web.config Connection String" description="uwbook_webapiContext Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:k91qrsub6b.database.windows.net,1433;Database=uwbookA3TCgVacwK;User ID=uwbook@k91qrsub6b;Password=SqlPassword@;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\uwbook\\uwbook-webapi\\uwbook-webapi\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='uwbook_webapiContext']/@connectionString" />
+  </parameter>
+</parameters>

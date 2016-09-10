@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="uwbook" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\uwbook\\uwbook-webapi\\uwbook-webapi\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\uwbook\\uwbook-webapi\\uwbook-webapi\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Add write permission to App_Data Folder" description="Add write permission to App_Data folder" value="uwbook/App_Data" tags="Hidden">
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\uwbook\\uwbook-webapi\\uwbook-webapi\\obj\\Release\\Package\\PackageTmp\\App_Data$" />
+  </parameter>
+  <parameter name="uwbook_webapiContext-Web.config Connection String" description="" value="Data Source=tcp:k91qrsub6b.database.windows.net,1433;Initial Catalog=uwbookA3TCgVacwK;User Id=uwbook@k91qrsub6b;Password=SqlPassword@" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\uwbook\\uwbook-webapi\\uwbook-webapi\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='uwbook_webapiContext']/@connectionString" />
+  </parameter>
+</parameters>

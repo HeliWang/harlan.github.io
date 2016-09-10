@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="Default Web Site/" />
+  <setParameter name="uwbook_webapiContext-Web.config Connection String" value="Server=tcp:k91qrsub6b.database.windows.net,1433;Database=uwbookA3TCgVacwK;User ID=uwbook@k91qrsub6b;Password=SqlPassword@;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" />
+</parameters>
