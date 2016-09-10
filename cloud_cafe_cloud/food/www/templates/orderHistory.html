@@ -1,0 +1,49 @@
+<ion-view title="Order History" id="page4">
+    
+
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    
+            
+    <ion-content padding="true" class="main animated bounceInRight has-header">
+        <ion-list>
+            <ion-item class="item-divider">Your Order History</ion-item>
+        </ion-list>
+        <ion-list>
+            <!--<ion-item ng-repeat="transEachTime in transJson.Transactions" ng-repeat="(cateValName, cateValInfo) in transEachTime.items" class="item-avatar">-->
+            <ion-item class="item-avatar">
+                <img src="img/yCazqOhPQxqHRx8vJuL6_20130524093407765925839.jpg">
+                <h2>Chicken Caesar Pita</h2>
+                <p>$4.7 - {{CurrentDate | date:'dd, MMMM yyyy'}}</p>
+            </ion-item>
+            
+            <!---
+            <ion-content class="main animated bounceInUp" padding="true" class="has-header">
+                <ion-list ng-repeat="transEachTime in transJson.Transactions"> 
+                    <ion-list ng-repeat="(cateValName, cateValInfo) in cateVal"> 
+                        <ion-item class="item-divider"> {{ cateValName }} - ${{ cateValInfo.cost.toFixed(2)  }} each  </ion-item>
+                        <ion-list ng-repeat="eachitem in cateValInfo.items"> 
+                            <ion-item ng-click="addToCart(eachitem.mealId, eachitem.itemName, account.iNumber)" class="own-list-animation item-thumbnail-left" menu-toggle="right">
+                                <img src="{{ eachitem.url }}">
+                                <h2>{{ eachitem.itemName }}</h2>
+                                <p style="white-space:normal;">{{ eachitem.description }}</p>
+                            </ion-item>
+                        </ion-list>
+                    </ion-list>
+                </ion-list>
+            </ion-content>
+            
+            -->
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </ion-list>
+    </ion-content>
+</ion-view>

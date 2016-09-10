@@ -1,0 +1,129 @@
+// ----------------------login json format(front end -> back end) -------------------------
+{
+    "login": {
+        "EmpID": "ixxxxxx",
+		"Pw": "pwpwpwppw"
+    }
+}
+
+// ----------------------login json format - send back (back end -> front end) -------------------------
+{
+    "status": { 
+		"message": "success" //or wrong password
+    }
+}
+
+// ----------------------menu json format(back end -> front end) -------------------------
+{
+    "categories": [
+        {
+            "Pita": {
+        		"cost": 4.7,
+        		"items": [
+                    {
+                      "mealId":"xxxx", 
+                      "itemName":"Chicken Caesar Pita", 
+                      "descrption":"Chicken Breast and Bacon drizzled with Caesar Dressing",
+                      "url":"http://i3.meishichina.com/attachment/recipe/2013/05/24/20130524093407765925839.jpg"
+                    },
+                    {
+                      "mealId":"xxxx", 
+                      "itemName":"Mushroom Pita Pockets", 
+                      "descrption":"A fresh and crunchy salad filling for a low fat sandwich",
+                      "url":"http://laurafoodz.com/image/data/1411570345634.png"
+                    }
+                ]
+            }
+        },
+        {
+            "Drink": {
+        		"cost": 0,
+        		"items": [
+                    {
+                      "mealId":"xxxx", 
+                      "itemName":"joice cocktail", 
+                      "descrption":"...",
+                      "url":"https://www.blogher.com/files/4082757_3D_DoleCan46oz_Front_v3.png"
+                    },
+                    {
+                      "mealId":"xxxx", 
+                      "itemName":"joice cocktail1", 
+                      "descrption":"...",
+                      "url":"https://www.blogher.com/files/4082757_3D_DoleCan46oz_Front_v3.png"
+                    }
+                ]
+            }
+         }
+    ]
+}
+
+// ----------------------transaction (checkout) json format(front end -> back end) -------------------------
+{
+    "Transaction": [
+        {
+            "mealId": "x",
+            "trTime": "YYYY-MM-DD HH:MI:SS",
+            "empId": "ixxxxxx"
+        },
+        {
+            "mealId": "x",
+            "trTime": "YYYY-MM-DD HH:MI:SS",
+            "empId": "ixxxxxx"
+        }
+    ]
+}
+
+
+        mealId: itemID,
+        trTime: new Date().toLocaleString(),
+        mealName: itemName,
+        empId: $rootScope.user
+
+// ----------------------transaction history json format(front end -> back end) -------------------------
+{
+    "empId": "ixxxxxx"
+}
+
+// ----------------------transaction history json format(back end -> front end) -------------------------
+{
+    "Transactions": [
+        {
+            "trTime": "xx/xx/xxx xx:xx",
+            "items": [
+                { 
+                  "itemName":"joice cocktail1",
+                  "url":"https://www.blogher.com/files/4082757_3D_DoleCan46oz_Front_v3.png",
+                  "cost": 0
+                },
+                { 
+                  "itemName":"pita",
+                  "url":"http://i3.meishichina.com/attachment/recipe/2013/05/24/20130524093407765925839.jpg"
+                  "cost": 4.7
+                }
+            ]
+        },
+        {
+            "trTime": "xx/xx/xxx xx:xx",
+            "items": [
+                { 
+                  "itemName":"joice cocktail1",
+                  "url":"https://www.blogher.com/files/4082757_3D_DoleCan46oz_Front_v3.png",
+                  "cost": 0
+                },
+                { 
+                  "itemName":"pita",
+                  "url":"http://i3.meishichina.com/attachment/recipe/2013/05/24/20130524093407765925839.jpg"
+                  "cost": 4.7
+                }
+            ]
+        }
+    ]
+}
+
+// ----------------------recommendation json format(back end -> front end) -------------------------
+{
+    "Recommendation":
+        {
+            "mealId": 1
+        }
+}

@@ -1,0 +1,49 @@
+<ion-view title="Welcome!" id="page2" > 
+
+    <ion-side-menus enable-menu-with-back-views="false" data-componentid="side-menu21">
+        <ion-side-menu-content>
+            <ion-content class="main animated bounceInUp" padding="true" class="has-header">
+                <ion-list ng-repeat="(cateIndex, cateVal) in menuJson.categories"> 
+                    <ion-list ng-repeat="(cateValName, cateValInfo) in cateVal"> 
+                        <ion-item class="item-divider"> {{ cateValName }} - ${{ cateValInfo.cost.toFixed(2)  }} each  </ion-item>
+                        <ion-list ng-repeat="eachitem in cateValInfo.items"> 
+                            <ion-item ng-click="addToCart(eachitem.MealId, eachitem.itemName, account.iNumber)" class="own-list-animation item-thumbnail-left" menu-toggle="right">
+                                <img src="{{ eachitem.url }}">
+                                <h2>{{ eachitem.itemName }}</h2>
+                                <p style="white-space:normal;">{{ eachitem.description }}</p>
+                            </ion-item>
+                        </ion-list>
+                    </ion-list>
+                </ion-list>
+            </ion-content>
+            <ion-nav-bar class="bar-stable">
+                <ion-nav-back-button></ion-nav-back-button>
+                <ion-nav-buttons side="right">
+                    <button class="button button-icon button-clear ion-navicon" menu-toggle="right"></button>
+                </ion-nav-buttons>
+            </ion-nav-bar>
+        </ion-side-menu-content>
+        
+        <ion-side-menu side="right" id="side-menu21">
+            <ion-header-bar class="bar-stable">
+                <div class="title">Cart</div>
+            </ion-header-bar>
+            <ion-content padding="false" class="side-menu-right has-header">
+                <ion-list data-componentid="list9">
+                    <ion-item class="item-divider" data-componentid="list-item-divider4">My Menu</ion-item>
+                    <ion-list show-delete="shouldShowDelete">
+                      <ion-item ng-repeat="eachcartitem in Cart">
+                        <ion-delete-button ng:click="removeItem($index)" class="ion-minus-circled"></ion-delete-button>
+                        {{eachcartitem.mealName}}
+                      </ion-item>
+                    </ion-list>
+                    <ion-toggle ng-model="shouldShowDelete">
+                      Show Delete?
+                    </ion-toggle>
+                </ion-list>
+                <a ng:click="checkOut()" menu-close="" id="cart-button2" class="button button-positive  button-block" data-componentid="button2">Checkout!</a>
+            </ion-content>
+        </ion-side-menu>
+    </ion-side-menus>
+
+</ion-view>
